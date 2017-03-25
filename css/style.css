@@ -118,3 +118,21 @@ button{
 #cellStyle {
   font-size: 24px;
 }
+
+input#link_bg{
+  width: 285px;
+  margin-left: 13px;
+  position: absolute;
+  height: 22px;
+  margin-top: -265px;
+  text-align: center;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  background-color: #3abcf6;
+  border: 2px;
+  border-color: #078cc8;
+}
+
+input#link_bg::-webkit-input-placeholder {text-indent: 0px; transition:  1.5s ease; color: white;}
+input#link_bg:focus::-webkit-input-placeholder{transition:  1s; color: #3abcf6;}
