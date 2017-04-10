@@ -16,7 +16,7 @@
     <input type="color" class="chose color" id="color_bg">
     <button type="button" name="set_color" class="custom_buttons" onclick="set_color_bg()">Set color</button>
     <button type="button" name="custom_picture" class="custom_buttons" onclick="set_picture_bg()">Chose picture</button>
-    <button type="button" name="clear" class="custom_buttons" onclick="clear()">Clear</button>
+    <button type="button" name="clear_bg" class="custom_buttons" onclick="clear_bg_all()">Clear</button>
   </div>
 
     <div class="name">
@@ -25,7 +25,8 @@
     </div>
 
     <div class="search">
-      <input id="search_field" type="text" onkeypress="return runScript(event)" name="city" placeholder="Enter name of your city"/><button class="search_button" onclick="search()" type="button" name="Search"><img class="search_icon" src="./img/favicon.ico" alt="search"/></button>
+      <input id="search_field" type="text" onkeypress="return runScript(event)" name="city" placeholder="Enter name of your city"/><!--
+      --><button class="search_button" onclick="search()" type="button" name="Search"><img class="search_icon" src="./img/favicon.ico" alt="search"/></button>
     </div>
 
     <div id="result">

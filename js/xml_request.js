@@ -7,8 +7,6 @@ function search() {
     set_style("#result_city {color: red; margin-top: 38px; transition: 1s;} #search_field{ margin-top: 75px; transition: 1s;} .search_button { margin-top: 77px; transition: 1s;}");
     deleteTable();
   } else {
-    document.getElementById("result_city").innerHTML = "Weather in city " + city_name;
-    set_style("#result_city {color: white;margin-top: 5px; transition: 1s;} #search_field{ margin-top: 5px;} .search_button { margin-top: 7px;}");
     deleteTable();
     request();
   }
@@ -40,6 +38,8 @@ function request() {
         result_array[2][i] = weather_obj.list[i].weather[0].description;
         result_array[3][i] = "http://openweathermap.org/img/w/" + weather_obj.list[i].weather[0].icon + ".png";
       }
+      document.getElementById("result_city").innerHTML = "Weather in city " + weather_obj.city.name;
+      set_style("#result_city {color: white;margin-top: 5px; transition: 1s;} #search_field{ margin-top: 5px;} .search_button { margin-top: 7px;}");
       createTable(result_array);
     }
   } catch (e) {

@@ -8,22 +8,32 @@ function set_color_bg() {
 function set_picture_bg() {
   var link = document.createElement('input');
   link.setAttribute("id", "link_bg");
-  link.setAttribute("placeholder", "Paste here link to page");
+  link.setAttribute("placeholder", "Paste here URL to image and press ENTER");
   link.setAttribute("onkeypress", "return set_bg_img(event)");
   document.body.appendChild(link);
 }
 
 function set_bg_img(e) {
   if (e.keyCode === 13) {
+    if (document.getElementById("link_bg").value === "") {
+      var error_message = document.createElement('p');
+      error_message.setAttribute("id","error_message");
+      var t = document.createTextNode("Please paste image URL");
+      error_message.appendChild(t);
+      document.body.appendChild(error_message);
+    } else {
       set_style("body{background-image: url(" + document.getElementById("link_bg").value + "); background-color: white;}");
       var link_input = document.getElementById("link_bg");
       if(link_input) link_input.parentNode.removeChild(link_input);
+      var error_msg = document.getElementById("error_message");
+      if(error_msg) error_msg.parentNode.removeChild(error_msg);
       return false;
+    }
   }
 }
 
-function clear() {
-  set_style("body{background-color: #00b0ff;} .search_button{background-color: #00b0ff;}");
+function clear_bg_all() {
+  set_style("body{ background-image: none; background-color: #00b0ff;} .search_button{background-color: #3abcf6;}");
 }
 
 function set_style(style) {
