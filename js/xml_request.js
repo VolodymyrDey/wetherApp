@@ -29,7 +29,7 @@ function request() {
     // Build request
     //
     var city_name = document.querySelector("div.search input[name=city]").value;
-    var apiUrl = "http://api.openweathermap.org/data/2.5/forecast?appid=cb64092b9a1a76433cad8b70805f1d41&q=" + city_name.toString();
+    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?appid=cb64092b9a1a76433cad8b70805f1d41&q=" + city_name.toString();
     var xml = new XMLHttpRequest();
     xml.open("GET", apiUrl, false);
     xml.send();
